@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Damy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrambleTextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MorphSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathHelper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/InertiaPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomBounce.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomWiggle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/GSDevTools.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CSSRulePlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Physics2DPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/PixiPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(
+        ScrollTrigger,
+        ScrollSmoother,
+        Observer,
+        SplitText,
+        TextPlugin,
+        ScrambleTextPlugin,
+        MorphSVGPlugin,
+        DrawSVGPlugin,
+        MotionPathPlugin,
+        MotionPathHelper,
+        Draggable,
+        InertiaPlugin,
+        Flip,
+        CustomEase,
+        CustomBounce,
+        CustomWiggle,
+        EasePack,
+        GSDevTools,
+        CSSRulePlugin,
+        Physics2DPlugin,
+        PixiPlugin
+      );
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .playfair {
+        font-family: "Playfair Display", serif;
+      }
+      .jakarta {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      body {
+        background-color: #fdfbf7;
+      }
+      .white {
+        color: #fdfbf7;
+      }
+
+      .black {
+        color: #1a1a1a !important;
+      }
+
+      h1 {
+        font-size: 4.948vw;
+        line-height: 1.15;
+        font-weight: 400;
+      }
+      h2 {
+        font-size: 2.82vw;
+        letter-spacing: 0.02em;
+      }
+      p {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 0.88vw;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #333333;
+      }
+      .signature {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 2.08vw;
+        color: #c59b67;
+      }
+
+      /* Nav */
+      section.navs {
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        align-items: center;
+      }
+      section.navs img {
+        width: 10vh;
+      }
+
+      /* Header */
+      #header-sect {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .headerimg {
+        width: 96%;
+        overflow: hidden;
+        object-fit: cover;
+        display: flex;
+        margin-inline: 2vw;
+        justify-content: center;
+      }
+      .headerimg img {
+        width: 80%;
+        height: 70vh;
+        object-fit: cover;
+        object-position: 0% 30%;
+      }
+      .gradient-overlay {
+        background: linear-gradient(
+          0deg,
+          #404045 -35%,
+          rgba(237, 221, 83, 0) 120%
+        );
+        width: 96%;
+        margin-inline: 2vw;
+        height: 70vh;
+        position: absolute;
+        top: 10vh;
+      }
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        top: -40vh;
+      }
+      .herobox-container {
+        display: flex;
+        justify-content: center;
+        gap: 4vw;
+        position: relative;
+        top: -35vh;
+      }
+      .hero-box {
+        background-color: #f7f4ef;
+        width: 36.45vw;
+        height: 32.4vh;
+        z-index: 9999999999;
+        border-radius: 2.344vw;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .herobox-text {
+        width: 15.625vw;
+        display: flex;
+        justify-content: center;
+      }
+      .herobox-img {
+        position: relative;
+        top: 7vh;
+      }
+
+      /* ── Carousel Section ── */
+      #carousel-sect {
+        background-color: #f5f0e8;
+        padding: 5vh 4vw;
+      }
+
+      .carousel-title {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-size: 3.2vw;
+        font-weight: 500;
+        letter-spacing: 0.3vw;
+        text-transform: uppercase;
+        color: #2c2c2a;
+        margin-bottom: 3vh;
+      }
+
+      .carousel-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+      }
+
+      .carousel-track-outer {
+        overflow: hidden;
+        flex: 1;
+      }
+
+      .carousel-track {
+        display: flex;
+        gap: 1.2vw;
+      }
+
+      .polaroid {
+        flex: 0 0 calc(33.333% - 0.8vw);
+        background: #fff;
+        border-radius: 0.4vw;
+        padding: 0.8vw 0.8vw 2.5vw;
+        box-shadow: 0 0.2vh 1.1vh rgba(0, 0, 0, 0.1);
+      }
+
+      .polaroid img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 0.2vw;
+        display: block;
+      }
+
+      .polaroid-placeholder {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 0.2vw;
+        background: #e0d8d0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2vw;
+        color: #aaa;
+      }
+
+      .nav-btn {
+        background: #fff;
+        border: 0.05vw solid #ccc;
+        border-radius: 50%;
+        width: 2.5vw;
+        height: 2.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.5vw;
+        color: #444;
+        flex-shrink: 0;
+        transition: background 0.15s;
+        line-height: 1;
+      }
+
+      .nav-btn:hover {
+        background: #ede8e0;
+      }
+
+      .dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5vw;
+        margin-top: 1.5vh;
+      }
+
+      .dot {
+        width: 0.42vw;
+        height: 0.42vw;
+        border-radius: 50%;
+        background: #c5bfb4;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .dot.active {
+        background: #555;
+      }
+
+      #letter-sect {
+        padding-block: 10vh;
+        display: flex;
+      }
+
+      .letter {
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 5vh;
+
+        & p {
+          width: 85%;
+          text-align: justify;
+        }
+      }
+      .notes {
+        width: 50vw;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav -->
+    <section class="navs">
+      <img src="srcs/ARIEF.png" alt="" />
+    </section>
+
+    <!-- Header -->
+    <section id="header-sect">
+      <div class="headerimg">
+        <img src="srcs/header.PNG" alt="" />
+      </div>
+      <div class="gradient-overlay"></div>
+      <div class="hero-text">
+        <h1 class="playfair white">A Journey Of Two.</h1>
+        <h1 class="playfair white">Always Forever.</h1>
+      </div>
+      <div class="herobox-container">
+        <div class="hero-box">
+          <div class="herobox-img">
+            <img src="srcs/ammar2.png" alt="" />
+          </div>
+          <div class="herobox-text"><h2 class="playfair">Anje Babyyyy</h2></div>
+        </div>
+        <div class="hero-box">
+          <div class="herobox-text"><h2 class="playfair">Baby Booooo</h2></div>
+          <div class="herobox-img">
+            <img src="srcs/damy2.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel -->
+    <section id="carousel-sect">
+      <h2 class="carousel-title playfair">Moments in Motion</h2>
+
+      <div class="carousel-wrapper">
+        <button class="nav-btn" id="prev">&#8249;</button>
+
+        <div class="carousel-track-outer">
+          <div class="carousel-track" id="track">
+            <!-- Add as many .polaroid divs as you want — carousel adjusts automatically -->
+            <!-- Replace polaroid-placeholder with: <img src="srcs/photo.jpg" alt="..." /> -->
+
+            <div class="polaroid">
+              <img src="srcs/IMG_7226.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7360.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7380.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7395.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7412.JPG" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7545.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7546.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7766.jpg" alt="" />
+            </div>
+            <div class="polaroid">
+              <img src="srcs/IMG_7767.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-btn" id="next">&#8250;</button>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </section>
+    <section id="letter-sect">
+      <div class="letter">
+        <h2 class="jakarta black">A LOVE LETTER TO US</h2>
+        <p class="jakarta black">
+          My Dearest Damy,<br />
+          <br />
+          My Anje Baby,<br />
+          <br />
+          I don't think I tell you enough how much you mean to me. Every day, I
+          find myself grateful that you're in my life. You bring so much
+          happiness, comfort, and love into my world that sometimes it's
+          difficult to put into words. <br />
+          <br />
+          No matter how good or bad my day is, talking to you always makes
+          everything better. Your smile, your laugh, your little habits, and
+          even the things you don't realize you do make me fall for you more and
+          more. You have a way of making ordinary moments feel special just by
+          being there. <br />
+          <br />
+          Thank you for being patient with me, for supporting me, and for loving
+          me even when I'm not at my best. Knowing that I have you gives me
+          strength and motivation to keep moving forward. <br />
+          <br />
+          Anje Baby, I want you to know that you are deeply loved, appreciated,
+          and cherished. You are not just my girlfriend—you are my best friend,
+          my safe place, and one of the most beautiful parts of my life. <br />
+          <br />
+          I look forward to all the memories we'll create together, all the
+          laughs we'll share, and all the challenges we'll overcome side by
+          side. No matter what happens, I will always treasure what we have.
+          <br />
+          <br />
+          I love you more than words can truly express, Damy. Thank you for
+          being you. <br />
+          <br />
+          Forever yours, <br />
+          <br />
+          <span class="signature"> Arief, your baby boo </span>
+        </p>
+      </div>
+      <div class="notes"></div>
+    </section>
+
+    <script>
+      const track = document.getElementById("track");
+      const dotsEl = document.getElementById("dots");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      const visibleCount = 3;
+
+      // ── 1. Grab originals, clone for infinite loop ──────────────────────
+      const originals = Array.from(track.children);
+      const total = originals.length;
+
+      // Prepend clones of the LAST `visibleCount` cards
+      originals
+        .slice(-visibleCount)
+        .reverse()
+        .forEach((card) => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          track.insertBefore(clone, track.firstChild);
+        });
+
+      // Append clones of the FIRST `visibleCount` cards
+      originals.slice(0, visibleCount).forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+      });
+
+      // Real cards now start at index `visibleCount`
+      let current = visibleCount;
+      let animating = false;
+
+      // ── 2. Build dots (one per original card) ───────────────────────────
+      for (let i = 0; i < total; i++) {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === 0 ? " active" : "");
+        d.onclick = () => goTo(i + visibleCount);
+        dotsEl.appendChild(d);
+      }
+
+      // ── 3. Helpers ───────────────────────────────────────────────────────
+      function getCardWidth() {
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        return track.children[0].offsetWidth + gap;
+      }
+
+      function updateDots() {
+        const dotIndex = (current - visibleCount + total) % total;
+        document.querySelectorAll(".dot").forEach((d, i) => {
+          d.classList.toggle("active", i === dotIndex);
+        });
+      }
+
+      function snapInstant(index) {
+        current = index;
+        gsap.set(track, { x: -(index * getCardWidth()) });
+      }
+
+      // ── 4. Main navigate function ────────────────────────────────────────
+      function goTo(index) {
+        if (animating) return;
+        animating = true;
+        current = index;
+
+        gsap.to(track, {
+          x: -(current * getCardWidth()),
+          duration: 0.5,
+          ease: "power2.out",
+          onComplete() {
+            // Jumped past the appended clones → snap back to real first card
+            if (current >= total + visibleCount) {
+              snapInstant(visibleCount);
+            }
+            // Jumped before the prepended clones → snap back to real last card
+            if (current < visibleCount) {
+              snapInstant(total + visibleCount - 1);
+            }
+            updateDots();
+            animating = false;
+          },
+        });
+
+        updateDots();
+      }
+
+      // ── 5. Init ──────────────────────────────────────────────────────────
+      snapInstant(visibleCount);
+      updateDots();
+
+      prevBtn.onclick = () => goTo(current - 1);
+      nextBtn.onclick = () => goTo(current + 1);
+    </script>
+  </body>
+</html>
