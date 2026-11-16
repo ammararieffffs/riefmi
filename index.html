@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Damy — A Journey Of Two</title>
+    <meta name="description" content="For Damy. A journey of two — always, forever." />
+    <!-- This is a private keepsake: keep it out of search engines. -->
+    <meta name="robots" content="noindex, nofollow, noimageindex" />
+    <meta name="theme-color" content="#0b0a0d" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a0d'/%3E%3Ccircle cx='25' cy='34' r='7' fill='%23f3b471'/%3E%3Ccircle cx='40' cy='29' r='5' fill='%23f6d3a1'/%3E%3C/svg%3E" />
+    <link rel="preload" as="image" href="media/header.webp" type="image/webp" fetchpriority="high" />
+    <script>
+      (function (d) {
+        d.classList.replace("no-js", "js");
+        // Set before first paint so the choreographed layout never flashes in unstyled.
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) d.classList.add("motion");
+      })(document.documentElement);
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Instrument+Sans:wght@400..700&family=Newsreader:opsz,wght@6..72,300..600&display=swap" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Libraries (only what is used) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Flip.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/Observer.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/CustomEase.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+
+    <!-- DAMY -->
+    <script defer src="js/smooth.js"></script>
+    <script defer src="js/story.js"></script>
+    <script defer src="js/sky.js"></script>
+    <script defer src="js/chapters/intro.js"></script>
+    <script defer src="js/chapters/chrome.js"></script>
+    <script defer src="js/chapters/us.js"></script>
+    <script defer src="js/chapters/moments.js"></script>
+    <script defer src="js/chapters/viewer.js"></script>
+    <script defer src="js/chapters/letter.js"></script>
+    <script defer src="js/chapters/ending.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#letter">Skip to the letter</a>
+
+    <!-- The persistent world: a night of out-of-focus lights, two of them warm. -->
+    <canvas class="sky" aria-hidden="true"></canvas>
+    <div class="sky-fallback" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <b class="sky-fallback__a"></b><b class="sky-fallback__b"></b>
+    </div>
+    <div class="veil" aria-hidden="true"></div>
+    <div class="dawn" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="threshold" aria-hidden="true">
+      <p class="threshold__line">for <em>Anje Baby</em></p>
+      <p class="threshold__count"><span class="threshold__num">00</span></p>
+    </div>
+
+    <header class="chrome">
+      <a class="chrome__mark" href="#top" aria-label="Arief &amp; Damy — back to the beginning">
+        <span class="wordmark" aria-hidden="true"></span>
+      </a>
+      <p class="chrome__chapter" aria-hidden="true">
+        <span class="chrome__index">00</span>
+        <span class="chrome__rule"><i></i></span>
+        <span class="chrome__name-wrap"><span class="chrome__name">Prologue</span></span>
+      </p>
+    </header>
+
+    <main id="top">
+      <!-- ─────────────────────────────── PROLOGUE ─────────────────────────────── -->
+      <section class="hero" data-chapter="Prologue" data-index="00" aria-labelledby="hero-title">
+        <p class="hero__to label"><span>For</span> Damy</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__line hero__line--a"><span class="hero__word">A&nbsp;Journey</span></span>
+          <span class="hero__line hero__line--b"><span class="hero__word"><em>Of&nbsp;Two.</em></span></span>
+        </h1>
+        <figure class="hero__pair">
+          <picture>
+            <source type="image/webp" srcset="media/header.webp" />
+            <img src="media/header.png" width="340" height="481" alt="Two small figurines of Arief and Damy standing side by side" fetchpriority="high" />
+          </picture>
+        </figure>
+        <p class="hero__always"><span class="hero__always-a">Always</span> <em class="hero__always-b">Forever.</em></p>
+        <p class="hero__cue label" aria-hidden="true"><span class="hero__cue-line"></span>Scroll, slowly</p>
+      </section>
+
+      <!-- ─────────────────────────────── US ─────────────────────────────── -->
+      <section class="us" data-chapter="Us" data-index="01" aria-label="The two of us">
+        <div class="us__stage">
+          <div class="us__amp" aria-hidden="true">&amp;</div>
+
+          <div class="us__name us__name--her">
+            <p class="label us__caption">What he calls her</p>
+            <p class="us__word" lang="en">
+              <span class="us__base">Anje Bab</span><span class="us__tail" data-letter="y"><span>y</span><span>y</span><span>y</span><span>y</span></span>
+            </p>
+            <span class="sr-only">Anje Babyyyy</span>
+          </div>
+
+          <div class="us__name us__name--him">
+            <p class="label us__caption">What she calls him</p>
+            <p class="us__word" lang="en">
+              <span class="us__base">Baby B</span><span class="us__tail" data-letter="o"><span>o</span><span>o</span><span>o</span><span>o</span><span>o</span></span>
+            </p>
+            <span class="sr-only">Baby Booooo</span>
+          </div>
+
+          <div class="us__floor" aria-hidden="true"></div>
+
+          <button class="us__figure us__figure--him" type="button" data-calls="her" aria-label="Arief — tap to say Anje Baby one more time">
+            <picture>
+              <source type="image/webp" srcset="media/ammar.webp" />
+              <img src="media/ammar.png" width="188" height="479" alt="" loading="lazy" decoding="async" />
+            </picture>
+            <span class="us__tag label" aria-hidden="true">Arief</span>
+          </button>
+          <button class="us__figure us__figure--her" type="button" data-calls="him" aria-label="Damy — tap to say Baby Boo one more time">
+            <picture>
+              <source type="image/webp" srcset="media/damy.webp" />
+              <img src="media/damy.png" width="152" height="415" alt="" loading="lazy" decoding="async" />
+            </picture>
+            <span class="us__tag label" aria-hidden="true">Damy</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── MOMENTS ─────────────────────────────── -->
+      <section class="moments" data-chapter="Moments" data-index="02" aria-labelledby="moments-title">
+        <div class="moments__stage">
+          <div class="moments__track">
+            <header class="moments__intro">
+              <p class="label">Nine frames, in the order they were taken</p>
+              <h2 class="moments__title" id="moments-title">
+                <span class="moments__title-a">Moments</span>
+                <span class="moments__title-b"><em>in</em> Motion</span>
+              </h2>
+              <p class="moments__hint label" aria-hidden="true">Tap any frame to hold it closer</p>
+            </header>
+
+            <ol class="moments__list">
+          <li class="moment" data-index="0" data-orient="l" data-label="b" style="--ar: 4032 / 3024; --h: 50; --y: 22; --ml: 0; --mw: 78%; --tone: rgb(24 8 8);" data-align="s">
+            <button class="moment__frame" type="button" data-photo="7226" aria-label="Open photo 1 of 9: Damy and Arief in the car at night — Damy in a cap and glasses, blowing a kiss to the camera">
+              <picture>
+                <source type="image/webp" srcset="media/7226-720.webp 720w, media/7226-1400.webp 1400w, media/7226-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7226-720.jpg" srcset="media/7226-720.jpg 720w, media/7226-1400.jpg 1400w, media/7226-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="4032" height="3024" alt="Damy and Arief in the car at night — Damy in a cap and glasses, blowing a kiss to the camera" loading="lazy" decoding="async" data-full-webp="media/7226-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">01</span><span class="moment__file">IMG 7226</span></p>
+          </li>
+          <li class="moment" data-index="1" data-orient="p" data-label="b" style="--ar: 4284 / 5712; --h: 70; --y: 13; --ml: 7; --mw: 86%; --tone: rgb(184 168 168);" data-align="e">
+            <button class="moment__frame" type="button" data-photo="7360" aria-label="Open photo 2 of 9: A mirror selfie of Arief and Damy standing in an arch lined with photo-booth strips">
+              <picture>
+                <source type="image/webp" srcset="media/7360-720.webp 720w, media/7360-1400.webp 1400w, media/7360-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7360-720.jpg" srcset="media/7360-720.jpg 720w, media/7360-1400.jpg 1400w, media/7360-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="4284" height="5712" alt="A mirror selfie of Arief and Damy standing in an arch lined with photo-booth strips" loading="lazy" decoding="async" data-full-webp="media/7360-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">02</span><span class="moment__file">IMG 7360</span></p>
+          </li>
+          <li class="moment" data-index="2" data-orient="p" data-label="t" style="--ar: 2316 / 3088; --h: 44; --y: 40; --ml: 5; --mw: 64%; --tone: rgb(24 24 24);" data-align="s">
+            <button class="moment__frame" type="button" data-photo="7380" aria-label="Open photo 3 of 9: A close-up selfie, Damy pouting and Arief smiling beside her">
+              <picture>
+                <source type="image/webp" srcset="media/7380-720.webp 720w, media/7380-1400.webp 1400w, media/7380-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7380-720.jpg" srcset="media/7380-720.jpg 720w, media/7380-1400.jpg 1400w, media/7380-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="2316" height="3088" alt="A close-up selfie, Damy pouting and Arief smiling beside her" loading="lazy" decoding="async" data-full-webp="media/7380-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">03</span><span class="moment__file">IMG 7380</span></p>
+          </li>
+          <li class="moment" data-index="3" data-orient="l" data-label="b" style="--ar: 3088 / 2316; --h: 38; --y: 12; --ml: 6; --mw: 92%; --tone: rgb(8 8 8);" data-align="e">
+            <button class="moment__frame" type="button" data-photo="7395" aria-label="Open photo 4 of 9: Arief and Damy close together on a sofa, Damy pouting at the camera">
+              <picture>
+                <source type="image/webp" srcset="media/7395-720.webp 720w, media/7395-1400.webp 1400w, media/7395-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7395-720.jpg" srcset="media/7395-720.jpg 720w, media/7395-1400.jpg 1400w, media/7395-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="3088" height="2316" alt="Arief and Damy close together on a sofa, Damy pouting at the camera" loading="lazy" decoding="async" data-full-webp="media/7395-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">04</span><span class="moment__file">IMG 7395</span></p>
+          </li>
+          <li class="moment" data-index="4" data-orient="p" data-label="b" style="--ar: 861 / 1280; --h: 78; --y: 10; --ml: 8; --mw: 70%; --tone: rgb(8 8 8);" data-align="c">
+            <button class="moment__frame" type="button" data-photo="7412" aria-label="Open photo 5 of 9: A four-frame photo-booth strip of the two of you against a pink backdrop">
+              <picture>
+                <source type="image/webp" srcset="media/7412-720.webp 720w, media/7412-861.webp 861w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7412-720.jpg" srcset="media/7412-720.jpg 720w, media/7412-861.jpg 861w" sizes="(min-width: 900px) 60vw, 92vw" width="861" height="1280" alt="A four-frame photo-booth strip of the two of you against a pink backdrop" loading="lazy" decoding="async" data-full-webp="media/7412-861.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">05</span><span class="moment__file">IMG 7412</span></p>
+          </li>
+          <li class="moment" data-index="5" data-orient="l" data-label="b" style="--ar: 4032 / 3024; --h: 52; --y: 15; --ml: 9; --mw: 90%; --tone: rgb(8 8 8);" data-align="s">
+            <button class="moment__frame" type="button" data-photo="7545" aria-label="Open photo 6 of 9: A night selfie in the car, both of you grinning wide">
+              <picture>
+                <source type="image/webp" srcset="media/7545-720.webp 720w, media/7545-1400.webp 1400w, media/7545-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7545-720.jpg" srcset="media/7545-720.jpg 720w, media/7545-1400.jpg 1400w, media/7545-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="4032" height="3024" alt="A night selfie in the car, both of you grinning wide" loading="lazy" decoding="async" data-full-webp="media/7545-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">06</span><span class="moment__file">IMG 7545</span></p>
+          </li>
+          <li class="moment" data-index="6" data-orient="l" data-label="b" style="--ar: 4032 / 3024; --h: 34; --y: 57; --ml: -8; --mw: 66%; --tone: rgb(8 8 8);" data-align="e">
+            <button class="moment__frame" type="button" data-photo="7546" aria-label="Open photo 7 of 9: Another night selfie in the car, both of you pouting">
+              <picture>
+                <source type="image/webp" srcset="media/7546-720.webp 720w, media/7546-1400.webp 1400w, media/7546-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7546-720.jpg" srcset="media/7546-720.jpg 720w, media/7546-1400.jpg 1400w, media/7546-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="4032" height="3024" alt="Another night selfie in the car, both of you pouting" loading="lazy" decoding="async" data-full-webp="media/7546-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">07</span><span class="moment__file">IMG 7546</span></p>
+          </li>
+          <li class="moment" data-index="7" data-orient="l" data-label="b" style="--ar: 4032 / 3024; --h: 46; --y: 30; --ml: 10; --mw: 84%; --tone: rgb(8 8 8);" data-align="s">
+            <button class="moment__frame" type="button" data-photo="7766" aria-label="Open photo 8 of 9: A night selfie outside, Arief standing behind Damy">
+              <picture>
+                <source type="image/webp" srcset="media/7766-720.webp 720w, media/7766-1400.webp 1400w, media/7766-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7766-720.jpg" srcset="media/7766-720.jpg 720w, media/7766-1400.jpg 1400w, media/7766-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="4032" height="3024" alt="A night selfie outside, Arief standing behind Damy" loading="lazy" decoding="async" data-full-webp="media/7766-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">08</span><span class="moment__file">IMG 7766</span></p>
+          </li>
+          <li class="moment" data-index="8" data-orient="l" data-label="t" style="--ar: 4032 / 3024; --h: 36; --y: 9; --ml: -6; --mw: 72%; --tone: rgb(24 24 24);" data-align="e">
+            <button class="moment__frame" type="button" data-photo="7767" aria-label="Open photo 9 of 9: A night selfie by the parked cars, Damy pouting and Arief smiling">
+              <picture>
+                <source type="image/webp" srcset="media/7767-720.webp 720w, media/7767-1400.webp 1400w, media/7767-2200.webp 2200w" sizes="(min-width: 900px) 60vw, 92vw" />
+                <img src="media/7767-720.jpg" srcset="media/7767-720.jpg 720w, media/7767-1400.jpg 1400w, media/7767-2200.jpg 2200w" sizes="(min-width: 900px) 60vw, 92vw" width="4032" height="3024" alt="A night selfie by the parked cars, Damy pouting and Arief smiling" loading="lazy" decoding="async" data-full-webp="media/7767-2200.webp" />
+              </picture>
+            </button>
+            <p class="moment__meta" aria-hidden="true"><span class="moment__no">09</span><span class="moment__file">IMG 7767</span></p>
+          </li>
+            </ol>
+
+            <p class="moments__outro" aria-hidden="true">
+              <span>&amp; every one</span>
+              <em>in between.</em>
+            </p>
+          </div>
+          <div class="moments__progress" aria-hidden="true"><i></i></div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────── INTERLUDE ─────────────────────────────── -->
+      <section class="interlude" data-chapter="Interlude" data-index="03" aria-label="Interlude">
+        <p class="interlude__text">
+          Some things are easier <em>to write down.</em>
+        </p>
+      </section>
+
+      <!-- ─────────────────────────────── LETTER ─────────────────────────────── -->
+      <section class="letter" id="letter" data-chapter="The Letter" data-index="04" aria-labelledby="letter-title" tabindex="-1">
+        <aside class="letter__aside">
+          <h2 class="letter__title" id="letter-title">
+            <span>A Love</span> <span>Letter</span> <span><em>to</em> Us</span>
+          </h2>
+          <dl class="letter__envelope">
+            <div><dt class="label">To</dt><dd>Damy, my Anje Baby</dd></div>
+            <div><dt class="label">From</dt><dd>Arief, your Baby Boo</dd></div>
+          </dl>
+          <div class="letter__progress" aria-hidden="true"><i></i></div>
+        </aside>
+
+        <article class="letter__paper">
+          <p class="letter__salute">My Dearest Damy,</p>
+          <p class="letter__salute letter__salute--second">My Anje Baby,</p>
+          <p>
+            I don't think I tell you enough how much you mean to me. Every day, I
+            find myself grateful that you're in my life. You bring so much
+            happiness, comfort, and love into my world that sometimes it's
+            difficult to put into words.
+          </p>
+          <p>
+            No matter how good or bad my day is, talking to you always makes
+            everything better. Your smile, your laugh, your little habits, and
+            even the things you don't realize you do make me fall for you more and
+            more. You have a way of making ordinary moments feel special just by
+            being there.
+          </p>
+          <p>
+            Thank you for being patient with me, for supporting me, and for loving
+            me even when I'm not at my best. Knowing that I have you gives me
+            strength and motivation to keep moving forward.
+          </p>
+          <p>
+            Anje Baby, I want you to know that you are deeply loved, appreciated,
+            and cherished. You are not just my girlfriend—you are my best friend,
+            my safe place, and one of the most beautiful parts of my life.
+          </p>
+          <p>
+            I look forward to all the memories we'll create together, all the
+            laughs we'll share, and all the challenges we'll overcome side by
+            side. No matter what happens, I will always treasure what we have.
+          </p>
+          <p>
+            I love you more than words can truly express, Damy. Thank you for
+            being you.
+          </p>
+          <p class="letter__closing">Forever yours,</p>
+          <p class="letter__signature"><span class="letter__ink">Arief, your baby boo</span></p>
+        </article>
+      </section>
+
+      <!-- ─────────────────────────────── ALWAYS ─────────────────────────────── -->
+      <section class="ending" data-chapter="Always" data-index="05" aria-labelledby="ending-title">
+        <div class="ending__stage">
+          <h2 class="ending__title" id="ending-title">
+            <span class="ending__l1">Out of everyone</span>
+            <span class="ending__l2">in this world,</span>
+            <span class="ending__l3"><em>I'd choose you.</em></span>
+          </h2>
+          <p class="ending__again" aria-label="Again, and again, and again.">
+            <span>Again,</span> <span>and again,</span> <span>and again.</span>
+          </p>
+
+          <div class="hold">
+            <button class="hold__button" type="button" aria-describedby="hold-help">
+              <svg class="hold__ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="hold__track" cx="60" cy="60" r="56" />
+                <circle class="hold__fill" cx="60" cy="60" r="56" pathLength="1" />
+              </svg>
+              <span class="hold__core" aria-hidden="true"></span>
+              <span class="sr-only">Hold to stay a little longer</span>
+            </button>
+            <p class="hold__help label" id="hold-help">Press &amp; hold — stay a little longer</p>
+          </div>
+
+          <div class="reveal" aria-live="polite">
+            <p class="reveal__text" hidden>
+              <span class="reveal__line">I love you,</span>
+              <em class="reveal__line">Anje Baby.</em>
+              <span class="reveal__from label">— your Baby Boo</span>
+            </p>
+          </div>
+        </div>
+
+        <footer class="coda">
+          <span class="wordmark coda__mark" role="img" aria-label="Arief Damy"></span>
+          <p class="coda__line"><em>A Journey Of Two</em> — still being written.</p>
+          <p class="coda__meta label">Made by hand, by Arief, for one person.</p>
+          <a class="coda__top label" href="#top">Begin again ↑</a>
+        </footer>
+      </section>
+    </main>
+
+    <!-- Photo viewer -->
+    <dialog class="viewer" aria-label="Photo viewer">
+      <div class="viewer__shade" aria-hidden="true"></div>
+      <div class="viewer__stage">
+        <figure class="viewer__frame">
+          <img class="viewer__img" alt="" />
+        </figure>
+      </div>
+      <div class="viewer__bar">
+        <p class="viewer__count label"><span class="viewer__no">01</span> / 09 <span class="viewer__file"></span></p>
+        <div class="viewer__nav">
+          <button class="viewer__btn viewer__prev" type="button" aria-label="Previous photo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+          </button>
+          <button class="viewer__btn viewer__next" type="button" aria-label="Next photo">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+          </button>
+          <button class="viewer__btn viewer__close" type="button" aria-label="Close photo viewer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+          </button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
